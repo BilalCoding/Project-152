@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+        <script src="./car.js"></script>
+        <script src="./base.js"></script>
+    </head>
+    <body>
+        <a-scene background="color: #000000">
+            <a-camera position="0 1 0" wasd-controls-enabled="false" look-controls-enabled="false" change-camera-on-click></a-camera>
+            <a-entity light="type: ambient; intensity: 0.1;" ></a-entity>
+            <a-entity light="type: directional; castShadow: true; intensity: 5; distance: 50; decay: 2; color: white;" position="0 5 -5" ></a-entity>
+            <a-assets>
+                <a-asset-item id="car" src="./2022_cavallo_diamond_gt/scene.gltf"></a-asset-item>
+            </a-assets>
+            <a-entity position="3 0 -3.5" rotation="0 90 0" scale="0.5 0.5 0.5" gltf-model="#car" shadow="cast: true; recieve: false" car></a-entity>
+            <a-entity position="0 -0.1 -5" shadow="cast: true; recieve: true" base></a-entity>
+        </a-scene>
+    </body>
+</html>
